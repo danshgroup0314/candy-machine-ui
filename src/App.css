@@ -1,3 +1,33 @@
 .App {
   text-align: center;
 }
+
+.topbar-container {
+  padding: 25px 15px;
+}
+
+.topbar-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.topbar-link {
+  color: #FFF;
+  text-decoration: none;
+  font-weight: 500;
+  display: block;
+  transition: all 0.2s linear;
+  border-bottom: 1px solid transparent;
+  margin: 0 15px;
+  padding: 5px 10px;
+}
+
+.topbar-link:hover,
+.topbar-link.active {
+  border-bottom-color: #FFF;
+}
+
+iframe {
+  display: none;
+}

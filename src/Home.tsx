@@ -489,14 +489,53 @@ const Home = (props: HomeProps) => {
   }, [refreshCandyMachineState]);
 
   return (
-    <Container style={{ marginTop: 100 }}>
-      <Container maxWidth="xs" style={{ position: "relative" }}>
+    <Container style={{ marginTop: 100, paddingBottom: 80 }}>
+      {
+        wallet.connected? (
+          <Container maxWidth="md" style={{ position: "relative" }}>
+            <Typography
+              display="block"
+              variant="h6"
+              color="textPrimary"
+              align="center"
+              style={{
+                fontWeight: "bold",
+              }}
+            >
+              Disclaimer
+            </Typography>
+            <Typography 
+              display="block"
+              variant="body2" 
+              color="textSecondary"
+              align="center"
+            >
+              Please note that there will be a vesting period of 2 months. You will have full ownership of your NFT however we will set the Royalties to 100% and list on public marketplaces on Dec 1st. This is to allow use to complete more features in the Research Library and to allow newcomers to stake their Lost Pirates to earn enough $SPICE tokens to merge the Lost Blocks and Lost Pirates colllections giving you access to 2 projects in a single NFT.
+            </Typography>
+          </Container>
+        ) : null
+      }
+
+      <Container id="mintContainer" maxWidth="xs" style={{ position: "relative", marginTop: 100, marginBottom: 150 }}>
+        {
+          wallet.connected? (
+            <img src="NFT_featured_image.png" width="300" height="300" alt="Joint Collection Image" loading="lazy" style={{ 
+              maxWidth: "100%", 
+              borderRadius: "5px",
+              display: "block",
+              margin: "0 auto 30px",
+              width: "calc(100% - 50px)",
+              height: "auto"
+            }} />
+          ) : null
+        }
         <Paper
           style={{
             padding: 24,
             paddingBottom: 10,
-            backgroundColor: "#151A1F",
+            backgroundColor: "transparent",
             borderRadius: 6,
+            boxShadow: "none"
           }}
         >
           {!wallet.connected ? (
@@ -708,9 +747,21 @@ const Home = (props: HomeProps) => {
             display="block"
             style={{ marginTop: 7, color: "grey" }}
           >
-            Powered by METAPLEX
+            Powered by <a href="https://monarchlabs.io/" target="_blank" rel="noreferrer" style={{ color: "grey", fontWeight: 'bold' }}>Monarch Labs</a>
           </Typography>
         </Paper>
+        {
+          wallet.connected? (
+            <img src="Logo_X.png" width="125" height="119" alt="Joint Collection" loading="lazy" style={{ 
+              display: "block",
+              margin: "30px auto",
+              maxWidth: "80px", 
+              height: "auto",
+              userSelect: "none",
+              pointerEvents: "none"
+            }} />
+          ) : null
+        }
       </Container>
 
       <Snackbar

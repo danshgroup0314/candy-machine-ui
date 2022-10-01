@@ -12,3 +12,39 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#root {
+  background-image: url("background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+#mintContainer::before {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  left: -50px;
+  background: url(Logo_MonarchLabs.png);
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: translateX(-100%);
+  background-position: center right;
+}
+
+#mintContainer::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  right: -50px;
+  background: url(Logo_LostPirates.png);
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: translateX(100%);
+  background-position: center left;
+}
