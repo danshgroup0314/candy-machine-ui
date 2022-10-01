@@ -21,10 +21,10 @@ code {
   overflow: hidden;
 }
 
-#mintContainer::before {
+#MintContainer::before {
   content: '';
   position: absolute;
-  bottom: -100px;
+  bottom: 20px;
   left: -50px;
   background: url(Logo_MonarchLabs.png);
   width: 100%;
@@ -32,13 +32,13 @@ code {
   background-repeat: no-repeat;
   background-size: contain;
   transform: translateX(-100%);
-  background-position: center right;
+  background-position: bottom right;
 }
 
-#mintContainer::after {
+#MintContainer::after {
   content: '';
   position: absolute;
-  bottom: -100px;
+  bottom: 20px;
   right: -50px;
   background: url(Logo_LostPirates.png);
   width: 100%;
@@ -46,5 +46,12 @@ code {
   background-repeat: no-repeat;
   background-size: contain;
   transform: translateX(100%);
-  background-position: center left;
+  background-position: bottom left;
+}
+
+#MainContent {
+  min-height: 525px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-end; */
 }
